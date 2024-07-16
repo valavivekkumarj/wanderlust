@@ -1,0 +1,33 @@
+<%if(msg && msg.length){%>
+<div class="alert flash-alert alert-success alert-dismissible fade show mt-2 col-6 offset-3" role="alert" id="flash-message">
+    <%=msg%>
+    <button type="button" class="btn-close btn-height btn-sm" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<%}%>
+
+
+<!-- for error flash msg -->
+<%if(err && err.length){%>
+    <div class=" alert flash-alert alert-danger alert-dismissible fade show mt-2 col-6 offset-3" role="alert" id="flash-message">
+        <%=err%>
+      </div>
+    <%}%>
+
+    
+      <script>
+        // Function to hide the flash message after 3 seconds
+        function hideFlashMessage() {
+            var flashMessage = document.getElementById('flash-message');
+            if (flashMessage) {
+                setTimeout(function() {
+                    flashMessage.style.opacity = '0';
+                    setTimeout(function() {
+                        flashMessage.style.display = 'none';
+                    }, 500); // Matches the transition duration
+                }, 3000); // 3 seconds
+            }
+        }
+
+        // Call the function to hide the flash message
+        hideFlashMessage();
+    </script>

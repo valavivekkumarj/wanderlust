@@ -1,0 +1,69 @@
+<% layout('/layouts/boilerplate') -%>
+
+    
+   
+<div class="row mt-3">
+   <div class="col-8 offset-2"> <h2>Create new listings:</h2><br></div>
+</div>
+        <div class="row">
+        
+         <div class="col-8 offset-2 ">
+      
+           <form method="post" action="/listings/new" class="needs-validation" novalidate enctype="multipart/form-data">
+            <div class="mb-3">
+               <label class="form-label" for="title">title: </label>
+               <input class="form-control"type="text" name="formdata[title]" id="title" placeholder="add catchy title" required>
+               <div class="invalid-feedback">Please provide valid title. </div>
+               <div class="valid-feedback">Title Looks good!  </div>
+         
+            </div >
+            <div class="mb-3">
+               <label class="form-label"for="image">upload listing image: </label>
+               <input class="form-control"type="file" name="formdata[image]" id="image">
+            </div>
+            <div class="mb-3">
+               <label class="form-label"for="description">description: </label>
+               <textarea class="form-control"name="formdata[description]" id="description" required>descibe your place</textarea>    
+               <div class="invalid-feedback">Please provide valid description. </div>
+            </div>
+            <div class="row">
+            <div class="mb-3 col-md-4">
+               <label class="form-label"for="price">price: </label>
+               <input class="form-control"type="number" name="formdata[price]" id="price" placeholder="23000" required> 
+               <div class="invalid-feedback">Please provide valid price. </div>
+            </div>
+            <div class="mb-3 col-md-8">
+               <label class="form-label"for="category">select category: </label>
+               <select class="form-select" aria-label="Default select example" name="formdata[category]" id="category">
+                  <option selected value="iconic cities">iconic cities</option>
+                  <option value="rooms">rooms</option>
+                  <option value="mountain">mountain</option>
+                  <option value="castle">castle</option>
+                  <option value="swimming">swimming</option>
+                  <option value="farmhouse">farmhouse</option>
+                  <option value="camping">camping</option>
+                  <option value="lake">lake</option>
+
+                </select> 
+               <div class="invalid-feedback">Please select category. </div>
+            </div>
+           
+         <div class="row">
+            <div class="mb-3 col-md-4">
+               <label class="form-label"for="location">location: </label>
+               <input class="form-control" type="text" name="formdata[location]" id="location" placeholder="navrangpura, ahmedabad" required>  
+               <div class="invalid-feedback">Please provide valid location. </div>
+            </div>
+            <div class="mb-3 col-md-8">
+               <label class="form-label"for="country">country: </label>
+            <input class="form-control"type="text" name="formdata[country]" id="country" placeholder="india" required>
+            <div class="invalid-feedback">Please provide valid country. </div>
+         </div></div>
+            <br>
+            <div class="mb-3">
+               <button class="btn btn-danger"type="submit">save</button>
+
+            </div>
+           </form>
+         </div>
+        </div>

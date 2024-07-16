@@ -1,0 +1,152 @@
+
+/* complete web sites all pages styling this related to all   start here */
+body{
+    font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /*background-color: #121212;*/
+}
+.page-heading{
+    color: #fe424d;
+}
+/* complete web sites all pages styling this related to all   end here*/
+
+
+/* navbar custom styling */
+
+.navbar{
+    height: 4rem;
+}
+.fa-airbnb{
+    color: #fe424d;
+    font-size: 2rem;
+}
+.nav-link{
+    color: #222222 !important;
+    
+    line-height: 0.8rem;
+    
+
+}
+.navbar-brand{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.nav-link:hover{
+color: #fe424d !important;
+
+}
+.navbar-collapse {
+    background-color: #e5eef6; /* Change this to your desired background color */
+}
+.navbar-toggler:focus {
+    outline: none;
+}
+
+/* footer custom style */
+
+.f-info-links a{
+    color: #222222;
+    text-decoration: none;
+}
+.f-info-links a:hover{
+    color: #291af1;
+    text-decoration: underline;
+}
+footer{
+    margin-top: auto;
+}
+.f-info{
+    margin-top: 1rem;
+    height: 5rem;
+    background-color: #ebebef;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:center;
+    
+
+}
+.f-info-socials{
+    margin: 0px 0px 0px 20px;
+    font-size: 1.5rem;
+}
+
+.f-info-socials .fa-brands{
+    margin: 0px 10px 0px 0px;
+}
+
+.f-info-links{
+    margin: 0px 20px 0px 0px;
+}
+.f-info-links .link{
+    margin: 0px 0px 0px 10px;
+}
+
+/* card for all listing page custom css */
+.card-img-top{
+    width: 100% !important;
+    object-fit: cover !important;
+height: 12rem;
+border-radius: 1rem;
+}
+
+ .card{
+    border: none;
+    border-radius: 1rem;
+    padding: 0;
+    font-weight:400 ;
+    font-size: small;
+} 
+.card-body{
+    padding: 0.4rem;
+}
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.3;
+background-color: white;
+border-radius: 1rem;
+}
+
+
+
+
+/*custom css for 404 error page*/
+.img404{
+width: 100%;
+object-fit: cover !important;
+height: 70vh;
+}
+
+
+
+/* custom css for flash.ejs */
+.flash-alert{
+    padding: 0.2rem;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.btn-height {
+    text-align: center;
+    height: 1rem !important;
+    padding: 0.4rem 0.6rem 0.4rem 0.4rem !important;
+
+}
+
+#flash-message{
+    position: relative;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+#map { 
+    height: 65vh;
+       width: 100%; }

@@ -1,0 +1,24 @@
+<% layout('/layouts/boilerplate') -%>
+<div class="row">
+    <div class="col-8 offset-2 mt-2">
+      <h2 style="color:black">Current booked destination:</h2>
+    </div>
+  </div>
+  
+<div class="row mt-3">
+    <div class="card col-8 offset-2" style="width: 18rem;">
+        <img src="<%=data.destination.image.url%>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h6 class="card-title page-heading"><%=data.destination.title%>.</h6>
+         
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Booked by: <%=data.customer.username%></li>
+          <li class="list-group-item">Amount paid: <%=data.destination.price%></li>
+          <li class="list-group-item">Location: <%=data.destination.location%>, <%=data.destination.country%></li>
+          <li class="list-group-item">check in date: <%=data.checkin.toString().split(' ').slice(0,4).join(' ')%></li>
+          <li class="list-group-item">check out date: <%=data.checkout.toString().split(' ').slice(0,4).join(' ')%></li>
+        </ul>
+        <form method="post" action="/booking/<%=data._id%>?_method=DELETE"><button type="submit" class="btn btn-danger">Cancel booking</button></form>
+      </div>
+</div>

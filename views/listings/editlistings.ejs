@@ -1,0 +1,51 @@
+<% layout('/layouts/boilerplate') -%>
+<div class="row">
+  <div class="col-8 offset-2 mt-2">
+    <h2 style="color:black">update details of your place</h2>
+  </div>
+</div>
+<br>
+   
+        <div class="row">
+          <div class="col-8 offset-2">
+            <form method="post" action="/listings/<%=data._id%>/edit?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+              <div class="mb-2">
+                <label class="form-label"for="title">title: </label>
+                <input class="form-control"type="text" name="formdata[title]" id="title" value="<%=data.title%>" required>
+                <div class="invalid-feedback">Please provide valid title. </div>
+                  
+              </div>
+              <div class="mb-2">
+                <p class="mt-2">original image:</p>
+                <img class="mb-2" src="<%=originalImageUrl%>" alt="listing image"><br>
+                <label class="form-label"for="image">upload new image</label>
+                <input class="form-control"type="file" name="formdata[image]" id="image" value="<%=data.image.filename%>">
+                <div class="invalid-feedback">Please provide image url. </div>
+              </div>
+              <div class="mb-2">
+                <label class="form-label"for="description">description: </label>
+                <textarea class="form-control"name="formdata[description]" id="description" required><%=data.description%></textarea>
+                <div class="invalid-feedback">Please provide description. </div>
+              </div>
+              <div class="row">
+              <div class="mb-2 col-md-4">
+                <label class="form-label"for="price">price: </label>
+                <input class="form-control"type="number" name="formdata[price]" id="price" value="<%=data.price%>"required>
+                <div class="invalid-feedback">Please provide valid price. </div>
+              </div>
+              <div class="mb-2 col-md-8">
+                <label class="form-label"for="location">location: </label>
+                <input class="form-control"type="text" name="formdata[location]" id="location" value="<%=data.location%>"required>
+                <div class="invalid-feedback">Please provide valid location. </div>
+              </div></div>
+              <div class="mb-2">
+                <label for="country" class="form-label">country: </label>
+                <input class="form-control"type="text" name="formdata[country]" id="country" value="<%=data.country%>"required>
+                <div class="invalid-feedback">Please provide valid country. </div>
+              </div>
+              <div class="mb-2">
+                <button class="btn btn-danger" type="submit">save</button>
+              </div>
+                          
+               </form>
+             </div></div>

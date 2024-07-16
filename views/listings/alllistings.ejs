@@ -1,0 +1,165 @@
+<% layout('/layouts/boilerplate') -%>
+<style>
+#filters{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+
+}
+#filter{
+  text-align: center;
+  margin-right: 2rem;
+  opacity: 0.9;
+}
+#filter p{
+  font-size: 0.8rem;
+}
+#filter:hover{
+  opacity: 1;
+cursor: pointer;
+color: #fe424d;
+}
+@media (max-width: 1200px) {
+  .filter-9, .filter-8, .filter-7 {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
+  .filter-6, .filter-5 {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .filter-4, .filter-3 {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .filter-2, .filter-1{
+    display: none;
+  }
+}
+@media (max-width: 340px) {
+  .filter-10{
+    display: none;
+  }
+}
+
+.gst{
+  display: none;
+  color: #fe424d;
+}
+.tax-toggle{
+  padding-top: 0.5rem;
+  padding-left: 2rem;
+  padding-right:1.2rem ;
+  padding-bottom: 1rem;
+  height: 2.5rem;
+  border: 0.1rem solid rgb(47, 45, 45);
+  border-radius: 1rem;
+  font-size: 1rem !important  ;
+  margin-bottom: 0.9rem;
+}
+.tax-text{
+  padding-left: 1.6rem; 
+}
+.form-check-input{
+  margin-right: 0rem !important;
+}
+#filter a{
+  text-decoration: none;
+  color: #2e2424;
+}
+#filter a:hover{
+  text-decoration: none;
+  color: red;
+  transition: 0.5s;
+}
+</style>
+<div id="filters" class="mt-2 mb-2">
+  <div id="filter" class="filter-1">
+    <a href="/listings">
+    <i class="fa-solid fa-fire"></i>
+    <p>Trending</p></a>
+  </div>
+
+  <div id="filter" class="filter-2">
+    <a href="/listings/search/rooms"> <i class="fa-solid fa-bed"></i>
+        <p>Rooms</p></a>
+  </div>
+
+  <div id="filter" class="filter-3">
+    <a href="/listings/search/iconic cities"><i class="fa-solid fa-city"></i>    <p>Iconic cities</p></a>
+  </div>
+
+  <div id="filter" class="filter-4">
+    <a href="/listings/search/mountain"> <i class="fa-solid fa-mountain-sun"></i>    <p>Mountain</p></a>
+  </div>
+
+  <div id="filter" class="filter-5">
+    <a href="/listings/search/castle"> <i class="fa-brands fa-fort-awesome"></i>    <p>Castle</p></a>
+  </div>
+
+  <div id="filter" class="filter-6">
+    <a href="/listings/search/swimming"><i class="fa-solid fa-person-swimming"></i>    <p>Swimming</p></a>
+  </div>
+
+  <div id="filter" class="filter-7">
+    <a href="/listings/search/farmhouse"><i class="fa-solid fa-tractor"></i>    <p>Farmhouse</p></a>
+  </div>
+
+  <div id="filter" class="filter-8">
+    <a href="/listings/search/camping"> <i class="fa-solid fa-campground"></i>    <p>Camping</p></a>
+  </div>
+
+  <div id="filter" class="filter-9">
+    <a href="/listings/search/lake"><i class="fa-solid fa-water"></i>    <p>Lake</p></a>
+  </div>
+  <!-- switches toggle: -->
+  <div class="form-check form-switch form-check-reverse tax-toggle filter-10">
+    <input class="form-check-input" type="checkbox" id="flexSwitchCheckReverse">
+    <label class="form-check-label" for="flexSwitchCheckReverse"><p class="tax-text">Display total with taxes</p></label>
+  </div>
+</div>
+
+<!-- main body -->
+<div class="row">
+  <% for (let x of data) { %>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-2">
+      <div class="card h-100">
+        <a href="/listings/<%= x._id %>">
+          <img src="<%= x.image.url %>" class="card-img-top" alt="place_image">
+          <div class="card-img-overlay"></div>
+        </a>
+        <div class="card-body">
+          <h6 class="card-title"><b><%= x.title %></b></h6>
+          <p class="card-text">
+            <%= x.location %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= x.country %>
+            <br>&#8377;<%= x.price.toLocaleString('en-IN') %> night&nbsp;&nbsp;<i class="gst" >+18% GST</i>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% } %>
+</div>
+
+
+<script>
+  let taxToggle=document.querySelector('#flexSwitchCheckReverse');
+  let gst=document.getElementsByClassName('gst');
+  taxToggle.addEventListener('click',()=>{
+    
+  for(let x of gst){
+    if(x.style.display!='inline'){
+    x.style.display='inline';
+    }
+  else{
+    x.style.display='none';
+  }
+}
+  });
+
+ 
+</script>

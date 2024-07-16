@@ -1,0 +1,97 @@
+<% layout('/layouts/boilerplate') -%>
+
+
+<div class="row">
+    <div class=" offset-2 mt-2">
+      <h2 style="color:black">Book your destination in advanced:</h2>
+    </div>
+ 
+  <br>
+     <div class="col-8 offset-2 mt-2" >
+  <form method="post" action="/booking/<%=data._id%>" novalidate class="needs-validation">
+
+  <div class="mb-3 row">
+    <label for="username" class="col-sm-2 col-form-label">username:</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" name="booking[username]" id="username" value="<%=currUser.username%>">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="email" class="col-sm-2 col-form-label">user email:</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" name="booking[email]" id="email" value="<%=currUser.email%>">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="title" class="col-sm-2 col-form-label">destination title:</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" name="booking[title]" id="title" value="<%=data.title%>">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="price" class="col-sm-2 col-form-label">price:</label>
+    <div class="col-sm-10">
+      <input type="number" readonly class="form-control-plaintext" name="booking[price]" id="price" value="<%=data.price%>">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="location" class="col-sm-2 col-form-label">location:</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" name="booking[location]" id="location" value="<%=data.location%>">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="country" class="col-sm-2 col-form-label">country:</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" name="booking[country]" id="country" value="<%=data.country%>">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="checkin" class="col-sm-2 col-form-label">Check in date:</label>
+    <div class="col-sm-6">
+      <input type="date"  class="form-control-plaintext" name="booking[checkin]" id="checkin" value="<%=data.checkin%>" required>
+      <div class="invalid-feedback">Please provide valid Date. </div>
+    </div>
+  </div>
+
+  
+  <div class="mb-3 row">
+    <label for="checkout" class="col-sm-2 col-form-label">Check out date:</label>
+    <div class="col-sm-6">
+      <input type="date"  class="form-control-plaintext" name="booking[checkout]" id="checkout" value="<%=data.checkout%>" required>
+      <div class="invalid-feedback">Please provide valid Date. </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <button class="btn btn-success" type="submit">Book now</button>
+  </div>
+</form>
+
+</div>
+</div>
+
+
+
+         
+                
+                    
+
+
+                
+           
+
+          
+
+               
+
+          
+
+
+               
+  
